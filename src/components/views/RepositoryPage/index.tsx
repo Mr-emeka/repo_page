@@ -31,6 +31,7 @@ const Home: React.FC = () => {
             },
             body,
         }).then(res => res.json()).then(({ data }) => {
+            console.log(data)
             setRepos(data.viewer.repositories.nodes)
             setData(data.viewer)
         })
