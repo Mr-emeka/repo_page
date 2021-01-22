@@ -22,12 +22,6 @@ const Home: React.FC = () => {
 
         var variables = { noOfRepository, noOfOrg };
         let body = JSON.stringify({ query, variables, });
-            fetch("https://api.github.com/users/Mr-emeka/repos")
-        .then(res => res.json())
-        .then(repos => {
-            console.log(repos)
-        });
-
         fetch(`https://api.github.com/graphql`, {
             method: "POST",
             headers: {
