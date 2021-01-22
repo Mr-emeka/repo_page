@@ -37,7 +37,7 @@ const Home: React.FC = () => {
     }, [noOfOrg, noOfRepository])
 
 
-    const handleSearch = (e) => {
+    const handleSearch = (e:any) => {
         setSearchValue(e.target.value)
     }
     return <Layout avatar={data.avatarUrl} handleSearch={handleSearch}>

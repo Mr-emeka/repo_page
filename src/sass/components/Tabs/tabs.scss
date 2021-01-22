@@ -1,29 +1,28 @@
 .tab {
-    overflow-x: auto;
-  }
-  
-  .tab {
-     color: $nav-bg-color;
-    outline: 1px dotted transparent;
-    outline-offset: -1px;
-    border-bottom: 2px solid transparent;
-    padding: 10px;
+  overflow-x: auto;
+}
 
-    span {
-    margin-left: 4px
+.tab {
+  color: $nav-bg-color;
+  outline: 1px dotted transparent;
+  outline-offset: -1px;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+
+  span {
+    margin-left: 4px;
   }
   svg {
     fill: #959da5;
   }
-  &.active{
-border-bottom-color: #f9826c !important;
+  &.active {
+    border-bottom-color: #f9826c !important;
     font-weight: 600;
-  svg{
-    fill: #32363b;
-
+    svg {
+      fill: #32363b;
+    }
   }
-  }
-&:hover {
+  &:hover {
     color: $nav-bg-color;
     cursor: pointer;
     text-decoration: none;
@@ -31,7 +30,7 @@ border-bottom-color: #f9826c !important;
     outline: 1px dotted transparent;
     outline-offset: -1px;
     transition-timing-function: ease-out;
-    transition-duration: .12s;
+    transition-duration: 0.12s;
   }
   &__counter {
     margin-left: 4px;
@@ -44,11 +43,10 @@ border-bottom-color: #f9826c !important;
     font-weight: 500;
     line-height: 18px;
     text-align: center;
-        justify-content: center;
+    justify-content: center;
     align-self: flex-end;
 
     border: 1px solid transparent;
     border-radius: 2em;
   }
-  }
-   
+}
