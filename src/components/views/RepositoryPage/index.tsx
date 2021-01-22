@@ -189,7 +189,7 @@ const Home: React.FC = () => {
                     <div>
                         <h6>Organizations</h6>
                         <div>
-                            {data?.organizations?.nodes.map(({ avatarUrl, name }) => {
+                            {data?.organizations?.nodes.map(({ avatarUrl:any, name:string }) => {
                                 return <img height="32" width="32" alt={name} src={avatarUrl} className="mr-1 mb-1" />
                             })}
                         </div>
