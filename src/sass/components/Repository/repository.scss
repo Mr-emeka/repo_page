@@ -1,0 +1,128 @@
+.repository{
+        border-bottom: 1px solid $color-border-primary !important;
+        &__name{
+                word-break:break-all !important;
+                font-size: 20px;
+    font-weight: 600;
+    display:inline-block;
+        }
+        &__color{
+                position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #1b1f231a;
+    border-radius: 50%;
+}
+&__isPrivate{
+    padding: 0 7px;
+    margin-left:.5em;    
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    border: 1px solid transparent;
+    border-radius: 2em;
+    color: #586069;
+    border-color: $color-border-primary;
+    background-color: transparent !important;
+}     
+&__info{
+        flex-wrap:wrap;
+        span{
+                margin-right:.2em;
+                color: $color-text-secondary;
+                font-size:12px;
+                span{
+                        svg{
+                                fill:$color-text-tertiary !important;
+                        }
+                }
+        }
+}
+&__star{
+        text-align: end;
+        @include media-query($medium-down){
+                justify-content:center;
+                align-self:center;
+        }
+}
+&__description{
+        word-break: break-word;
+        @include media-query($medium-down){
+                width:100%;
+        }
+}
+&__btn{
+   position: relative;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid $color-btn-border;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+       color:$color-btn-text;
+    display:flex;
+    align-items:center;
+    svg{
+       fill:$color-text-tertiary !important;      
+    }
+}
+&__pagination{
+   justify-content: center;
+    display: flex;
+}
+&__prevBtn{
+      color:#0366d6;
+    background-color: #fafbfc;
+    border-color: $color-btn-border;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+   padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 6px 0 0 6px;
+       &:disabled{
+     color:#0366d680;
+
+    }
+   &:hover{
+     color:#0366d6;
+   }
+
+}
+&__nextBtn{
+    color:#0366d6;
+    background-color: #fafbfc;
+    border-color: $color-btn-border;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+    border-radius: 0 6px 6px 0;
+    &:disabled{
+     color:#0366d680;
+
+    }
+   &:hover{
+     color:#0366d6;
+   }
+}
+}

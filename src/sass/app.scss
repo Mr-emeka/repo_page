@@ -1,0 +1,52 @@
+@import "./variables";
+@import "./mixins";
+
+
+@import "~bootstrap/scss/bootstrap";
+@import './components/main.scss';
+
+@import "./pages/index.scss";
+
+html {  
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  
+    body {
+      font-family: $font;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      p{
+        margin:0;
+      }
+      main{
+        margin-top:3em;
+        @include media-query($medium-down){
+          margin-top:1em;
+        }
+      }
+    }
+
+  }
+
+  .sticky {
+    position: sticky;
+    background: $white;
+    top: 0;
+    z-index: 6;
+
+}
+.truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text-gray-light{
+          fill:$color-text-tertiary !important;
+}
+.scroll-nav {
+  border-bottom: 1px solid $color-border-primary !important;
+}

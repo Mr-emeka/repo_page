@@ -1,0 +1,46 @@
+.activity {
+    @include media-query($medium-down) {
+        display: none;
+    }
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__dropdown {
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $white;
+        margin: 3px 0 0 3px;
+        align-self: center;
+    }
+    summary {
+        margin-right: 20px;
+        cursor: pointer;
+        display: flex;
+        svg {
+            fill: $white;
+        }
+        svg:hover {
+            fill: $invert-white;
+        }
+        &:hover {
+            .activity__dropdown {
+                border-top: 6px solid $invert-white;
+            }
+        }
+    }
+    &__avatar {
+        display: inline-block;
+        overflow: hidden;
+        line-height: 1;
+        vertical-align: middle;
+        border-radius: 6px;
+        box-shadow: 0 0 0 1px $color-text-tertiary;
+        width: 20px;
+        height: 20px;
+        background-color: blanchedalmond;
+        img {
+            display: none;
+        }
+    }
+}

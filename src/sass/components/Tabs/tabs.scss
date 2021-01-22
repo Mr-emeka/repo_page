@@ -1,0 +1,54 @@
+.tab {
+    overflow-x: auto;
+  }
+  
+  .tab {
+     color: $nav-bg-color;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+    border-bottom: 2px solid transparent;
+    padding: 10px;
+
+    span {
+    margin-left: 4px
+  }
+  svg {
+    fill: #959da5;
+  }
+  &.active{
+border-bottom-color: #f9826c !important;
+    font-weight: 600;
+  svg{
+    fill: #32363b;
+
+  }
+  }
+&:hover {
+    color: $nav-bg-color;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom-color: #d1d5da;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+    transition-timing-function: ease-out;
+    transition-duration: .12s;
+  }
+  &__counter {
+    margin-left: 4px;
+    color: $nav-bg-color;
+    display: flex;
+    background-color: #d1d5da80;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+        justify-content: center;
+    align-self: flex-end;
+
+    border: 1px solid transparent;
+    border-radius: 2em;
+  }
+  }
+   

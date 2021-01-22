@@ -1,0 +1,31 @@
+.header {
+    width: 100%;
+    height: 65px;
+
+    &__wrapper {
+        position: relative;
+        background: $nav-bg-color;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 1fr;
+
+        @include media-query($large-up) {
+            &[data-nav-position="center"] {
+                grid-template-columns: 5% 75% 20%;
+            }
+        }
+        @include media-query($medium-down) {
+            padding: 0 2rem;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+
+            @include media-query($medium-down) {
+                display: none;
+            }
+        }
+    }
+}

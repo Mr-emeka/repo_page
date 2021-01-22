@@ -1,0 +1,62 @@
+// Any variables that will be used throughout styles
+
+$font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+$blue: #6495ed;
+$white: #ffffff;
+$nav-bg-color: #24292e;
+$invert-white: #ffffffb3;
+$color-border-primary: #e1e4e8;
+$color-text-secondary: #586069;
+$color-text-tertiary: #6a737d;
+$color-shadow-small: 0 1px 0 rgba(27, 31, 35, 0.04);
+$color-text-link: #0366d9;
+
+$color-btn-bg: #fafbfc;
+$color-btn-text:#24292e;
+$color-btn-border: #1b1f2326;
+$color-btn-primary-bg:#2ea44f;
+/*
+============================================================================
+COLD Variables
+
+This is where you will use variables that can be used with SASS
+
+Spacers, Breakpoints
+=============================================================================
+*/
+
+//** Spacers **//
+$spacer-xs: 4px;
+$spacer-s: 8px;
+$spacer-m: 16px;
+$spacer-l: 24px;
+$spacer-xl: 32px;
+
+//** Grid Breakpoints and Class Names **//
+//Do not change the variable names
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1400px;
+
+$small: "small";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
+
+// The `$breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+$breakpoints: (
+    $small "(max-width: #{$grid-medium - 1})",
+    $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+    $medium-down "(max-width: #{$grid-large - 1})",
+    $medium-up "(min-width: #{$grid-medium})",
+    $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+    $large-down "(max-width: #{$grid-widescreen - 1})",
+    $large-up "(min-width: #{$grid-large})",
+    $widescreen "(min-width: #{$grid-widescreen})"
+);
