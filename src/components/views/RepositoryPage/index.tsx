@@ -189,8 +189,8 @@ const Home: React.FC = () => {
                     <div>
                         <h6>Organizations</h6>
                         <div>
-                            {data?.organizations?.nodes.map(({ avatarUrl, name }:{avatarUrl:string, name:string}) => {
-                                return <img height="32" width="32" alt={name} src={avatarUrl} className="mr-1 mb-1" />
+                            {data?.organizations?.nodes.map(({ avatarUrl, name }:{avatarUrl:string, name:string},idx:number) => {
+                                return <img height="32" width="32" alt={name} src={avatarUrl} className="mr-1 mb-1" key={idx} />
                             })}
                         </div>
                     </div>

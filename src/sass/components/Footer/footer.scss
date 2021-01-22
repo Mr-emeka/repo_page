@@ -1,5 +1,25 @@
 .footer {
     padding: 0 3rem;
-    // position:fixed;
-    // bottom:0;
+    color: #586069;
+    font-size: 12px !important;
+    &__container {
+        display: flex;
+        @include media-query($medium-down) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    &__logo {
+        svg {
+            fill: #d1d5da !important;
+        }
+    }
+    div {
+        a {
+            margin-right: 3em;
+            @include media-query($medium-down) {
+                margin-right: 0.4em;
+            }
+        }
+    }
 }

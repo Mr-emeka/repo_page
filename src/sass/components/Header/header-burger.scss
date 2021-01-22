@@ -9,7 +9,6 @@
     cursor: pointer;
 
     @include media-query($large-up) {
-
         [data-nav-position="right"] &,
         [data-nav-position="center"] & {
             display: none;
