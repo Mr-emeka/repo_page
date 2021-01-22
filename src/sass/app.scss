@@ -48,5 +48,7 @@ html {
           fill:$color-text-tertiary !important;
 }
 .scroll-nav {
+  margin-top: 10px;
+  overflow-x: auto;
   border-bottom: 1px solid $color-border-primary !important;
 }
