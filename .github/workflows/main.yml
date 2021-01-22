@@ -18,6 +18,7 @@ jobs:
       #   run: npm test
       - name: Build
         env:
+          REACT_APP_access_token: ${{ secrets.REACT_APP_access_token }}
           CI: false
         run: npm run build
       - name: Archive Production Artifact
