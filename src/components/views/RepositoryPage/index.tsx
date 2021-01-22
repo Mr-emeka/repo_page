@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     // Pagination Use State
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [maxItemsPerPage] = useState<number>(30)
-    const { y } = useScroll(0)
+    const { y } = useScroll()
 
     useEffect(() => {
 
@@ -189,7 +189,7 @@ const Home: React.FC = () => {
                     <div>
                         <h6>Organizations</h6>
                         <div>
-                            {data?.organizations?.nodes.map(({ avatarUrl:any, name:string }) => {
+                            {data?.organizations?.nodes.map(({ avatarUrl, name }:{avatarUrl:string, name:string}) => {
                                 return <img height="32" width="32" alt={name} src={avatarUrl} className="mr-1 mb-1" />
                             })}
                         </div>
@@ -200,8 +200,8 @@ const Home: React.FC = () => {
                         <Search handleSearch={handleSearch} />
                     </div>
                     {repos.slice((currentPage * maxItemsPerPage) - maxItemsPerPage, currentPage * maxItemsPerPage)
-                        .filter(({ name }) => name.toLowerCase().includes(searchValue.toLowerCase()))
-                        .map(({ name, isPrivate, description, stargazerCount, forkCount, primaryLanguage, updatedAt }, idx) => <RepoCard key={idx}
+                        .filter(({ name }:{name:string}) => name.toLowerCase().includes(searchValue.toLowerCase()))
+                        .map(({ name, isPrivate, description, stargazerCount, forkCount, primaryLanguage, updatedAt }:{name:string, isPrivate:boolean, description:string, stargazerCount:string, forkCount:number, primaryLanguage:any, updatedAt:string}, idx:number) => <RepoCard key={idx}
                             name={name} description={description} stargazerCount={stargazerCount}
                             forkCount={forkCount} primaryLanguage={primaryLanguage}
                             isPrivate={isPrivate}

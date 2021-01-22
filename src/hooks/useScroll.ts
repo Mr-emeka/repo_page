@@ -1,7 +1,7 @@
 import React from "react";
 
-const useScroll = (setOpen) => {
-  const [y, setY] = React.useState(0);
+const useScroll = () => {
+  const [y, setY] = React.useState<number>(0);
 
   React.useEffect(() => {
     const handleWindowScroll = () => {
@@ -9,7 +9,7 @@ const useScroll = (setOpen) => {
     };
     window.addEventListener("scroll", handleWindowScroll);
     return () => window.removeEventListener("scroll", handleWindowScroll);
-  }, [setOpen]);
+  }, []);
 
   // Return the width so we can use it in our components
   return { y };
