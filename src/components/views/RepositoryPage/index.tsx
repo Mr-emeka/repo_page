@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const [noOfOrg] = useState<number>(20)
     const [edit, setEdit] = useState<boolean>(false)
     const [data, setData] = useState<any>({})
-    const [repos, setRepos] = useState<any>([])
+    const [repository, setRepository] = useState<any>([])
     const [searchValue, setSearchValue] = useState<string>('')
     // Pagination Use State
     const [currentPage, setCurrentPage] = useState<number>(1)
@@ -31,13 +31,13 @@ const Home: React.FC = () => {
             },
             body,
         }).then(res => res.json()).then(({ data }) => {
-            setRepos(data.viewer.repositories.nodes)
+            setRepository(data.viewer.repositories.nodes)
             setData(data.viewer)
         })
     }, [noOfOrg, noOfRepository])
 
 
-    const handleSearch = (e:any) => {
+    const handleSearch = (e: any) => {
         setSearchValue(e.target.value)
     }
     return <Layout avatar={data.avatarUrl} handleSearch={handleSearch}>
@@ -56,23 +56,6 @@ const Home: React.FC = () => {
             {!edit && <button className="btn profile__editBtn my-3" onClick={() => setEdit(true)} > Edit Profile</button>}
             {edit && <div className="form-group-body">
                 <textarea className="form-control mb-3" value={data.bio} placeholder="Add bio"></textarea>
-            </div>}
-            {!edit && <div className="profile__column d-flex mb-3">
-                <div className="profile__followers">
-                    <span>
-                        <svg className="octicon octicon-people text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
-                    </span>
-                    {data?.followers?.totalCount} followers {'.'}
-                </div>
-                <div className="profile__following">
-                    {data?.following?.totalCount} Following {"."}
-                </div>
-                <div className="profile__starred">
-                    <span>
-                        <svg className="octicon octicon-star text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
-                    </span>
-                    {data?.starredRepositories?.totalCount}
-                </div>
             </div>}
             <div className="profile__data mb-3">
                 {edit && <div>
@@ -94,6 +77,24 @@ const Home: React.FC = () => {
                 </div>}
 
             </div>
+            {!edit && <div className="profile__column d-flex mb-3">
+                <div className="profile__followers">
+                    <span>
+                        <svg className="octicon octicon-people text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
+                    </span>
+                    {data?.followers?.totalCount} followers {'.'}
+                </div>
+                <div className="profile__following">
+                    {data?.following?.totalCount} Following {"."}
+                </div>
+                <div className="profile__starred">
+                    <span>
+                        <svg className="octicon octicon-star text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+                    </span>
+                    {data?.starredRepositories?.totalCount}
+                </div>
+            </div>}
+
             {edit && <div className="my-3">
                 <button className="btn profile__saveBtn" onClick={() => setEdit(false)}>save </button>
                 <button className="btn profile__cancelBtn" onClick={() => setEdit(false)}>cancel </button>
@@ -189,7 +190,7 @@ const Home: React.FC = () => {
                     <div>
                         <h6>Organizations</h6>
                         <div>
-                            {data?.organizations?.nodes.map(({ avatarUrl, name }:{avatarUrl:string, name:string},idx:number) => {
+                            {data?.organizations?.nodes.map(({ avatarUrl, name }: { avatarUrl: string, name: string }, idx: number) => {
                                 return <img height="32" width="32" alt={name} src={avatarUrl} className="mr-1 mb-1" key={idx} />
                             })}
                         </div>
@@ -199,21 +200,24 @@ const Home: React.FC = () => {
                     <div className="repo__search py-3">
                         <Search handleSearch={handleSearch} />
                     </div>
-                    {repos.slice((currentPage * maxItemsPerPage) - maxItemsPerPage, currentPage * maxItemsPerPage)
-                        .filter(({ name }:{name:string}) => name.toLowerCase().includes(searchValue.toLowerCase()))
-                        .map(({ name, isPrivate, description, stargazerCount, forkCount, primaryLanguage, updatedAt }:{name:string, isPrivate:boolean, description:string, stargazerCount:string, forkCount:number, primaryLanguage:any, updatedAt:string}, idx:number) => <RepoCard key={idx}
+                    {searchValue && <div className="repository__found">
+                        <strong>{repository.filter(({ name }: { name: string }) => name.toLowerCase().includes(searchValue.toLowerCase())).length}</strong> results for repositories matching <strong>{searchValue}</strong>
+                    </div>}
+                    {repository.slice((currentPage * maxItemsPerPage) - maxItemsPerPage, currentPage * maxItemsPerPage)
+                        .filter(({ name }: { name: string }) => name.toLowerCase().includes(searchValue.toLowerCase()))
+                        .map(({ name, isPrivate, description, stargazerCount, forkCount, primaryLanguage, updatedAt }: { name: string, isPrivate: boolean, description: string, stargazerCount: string, forkCount: number, primaryLanguage: any, updatedAt: string }, idx: number) => <RepoCard key={idx}
                             name={name} description={description} stargazerCount={stargazerCount}
                             forkCount={forkCount} primaryLanguage={primaryLanguage}
                             isPrivate={isPrivate}
                             updatedAt={updatedAt} />
 
                         )}
-                    {repos.length >= 1 && <div className="repository__pagination my-3">
+                    {repository.length >= 1 && <div className="repository__pagination my-3">
                         <button className="btn repository__prevBtn" disabled={currentPage > 1 ? false : true} onClick={() => currentPage > 1 ? setCurrentPage(currentPage - 1) : null}>Previous</button>
 
                         <button className="btn repository__nextBtn"
-                            disabled={repos.length > currentPage * maxItemsPerPage ? false : true}
-                            onClick={() => repos.length > currentPage * maxItemsPerPage ? setCurrentPage(currentPage + 1) : null}>Next</button>
+                            disabled={repository.length > currentPage * maxItemsPerPage ? false : true}
+                            onClick={() => repository.length > currentPage * maxItemsPerPage ? setCurrentPage(currentPage + 1) : null}>Next</button>
                     </div>}
                 </div>
             </div>

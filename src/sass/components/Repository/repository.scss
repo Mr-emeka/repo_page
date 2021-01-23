@@ -122,4 +122,11 @@
                         color: #0366d6;
                 }
         }
+        &__found {
+                border-bottom: 1px solid $color-btn-border;
+                padding: 1em 0;
+                strong {
+                        font-weight: 600;
+                }
+        }
 }
